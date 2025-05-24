@@ -36,10 +36,10 @@ public class ProductController {
 
     @PostMapping("/product")
     public ResponseEntity<?> addProduct(@RequestPart Product product,
-                              @RequestPart MultipartFile image) {
+                              @RequestPart MultipartFile imageFile) {
 
         try {
-            Product product1 = service.addProduct(product,image);
+            Product product1 = service.addProduct(product,imageFile);
             System.out.println(product1);
             return new ResponseEntity<>(product1, HttpStatus.CREATED);
         }
